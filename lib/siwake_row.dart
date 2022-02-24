@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SiwakeRow extends StatelessWidget {
-  SiwakeRow({
-    Key? key,
-  }) : super(key: key);
+  late List<TextEditingController> controllers;
+  SiwakeRow({Key? key, required List<TextEditingController> this.controllers})
+      : super(key: key);
 
   static Widget siwakeHeader = Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -22,7 +22,9 @@ class SiwakeRow extends StatelessWidget {
           children: [
             Flexible(
                 child: Container(
-              child: TextField(),
+              child: TextField(
+                controller: controllers[0],
+              ),
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
@@ -31,7 +33,10 @@ class SiwakeRow extends StatelessWidget {
             )),
             Flexible(
                 child: Container(
-              child: TextField(),
+              child: TextField(
+                controller: controllers[1],
+                keyboardType: TextInputType.number,
+              ),
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
@@ -40,7 +45,9 @@ class SiwakeRow extends StatelessWidget {
             )),
             Flexible(
                 child: Container(
-              child: TextField(),
+              child: TextField(
+                controller: controllers[2],
+              ),
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
@@ -49,7 +56,10 @@ class SiwakeRow extends StatelessWidget {
             )),
             Flexible(
                 child: Container(
-              child: TextField(),
+              child: TextField(
+                controller: controllers[3],
+                keyboardType: TextInputType.number,
+              ),
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
